@@ -1,17 +1,29 @@
 import re
 import argparse
 import requests
-
+import IPython
 parser = argparse.ArgumentParser()
 parser.add_argument("-u","--url",
-                        help="Input a URL i.e. https:// or http://")
+                        help="Input a URL i.e. https, http, ftp, etc..")
 parser.add_argument("-f","--file",
-                        help="Input file")
+                        help="Input file location")
 parser.add_argument("-o","--output",
-                        help="Output file")
+                        help="Output file location")
 parser.add_argument("-c","--cookie",
                         help="Add URL cookie, in the form \"PHPSESSID=qw32312313\"")
 args = parser.parse_args()
+
+if(args.file!=None or args.url!=None):
+    print """
+.___     ..__         ,      .___      .
+[__ ._  _|[__) _ *._ -+- ___ [__ *._  _| _ ._.
+[___[ )(_]|   (_)|[ ) |      |   |[ )(_](/,[
+
+            author: $_SpyD3r_$
+ """
+else:
+    print parser.print_help()
+    exit()
 
 if(args.file):
     f = open(args.file,'r').read()
