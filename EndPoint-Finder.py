@@ -1,7 +1,7 @@
 import re
 import argparse
 import requests
-import IPython
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-u","--url",
                         help="Input a URL i.e. https, http, ftp, etc..")
