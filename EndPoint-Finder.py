@@ -14,15 +14,15 @@ parser.add_argument("-c","--cookie",
 args = parser.parse_args()
 
 if(args.file!=None or args.url!=None):
-    print """
+    print("""
 .___     ..__         ,      .___      .
 [__ ._  _|[__) _ *._ -+- ___ [__ *._  _| _ ._.
 [___[ )(_]|   (_)|[ ) |      |   |[ )(_](/,[
 
             author: $_SpyD3r_$
- """
+ """)
 else:
-    print parser.print_help()
+    print(parser.print_help())
     exit()
 
 if(args.file):
@@ -65,34 +65,34 @@ def print_end_points(end_point):
     start1=("http://","https://","file://","php://","ftp://")
     a="\n-----------------Remote files which are added-----------------------------------\n"
     if(args.output): saving_in_file(a)
-    print a
+    print(a)
     for i in end_point:
         if i.startswith(start1):
-            print i
+            print(i)
             if(args.output): saving_in_file(i)
 
     b="\n-----------------These files are present in server------------------------------\n"
-    print b
+    print(b)
     if(args.output): saving_in_file(b)
     for i in end_point:
         if i.endswith(extension):
-            print i
+            print(i)
             if(args.output): saving_in_file(i)
 
     c="\n-----------------These are files and directory, you can look into---------------\n"
-    print c
+    print(c)
     if(args.output): saving_in_file(c)
     start1=("/","./","../")
     for i in end_point:
         if i.startswith(start1) and not (i.endswith(extension)):
-            print i
+            print(i)
             if(args.output): saving_in_file(i)
 
 
-    print "\n-----------------These directory can be present (not sure!!)--------------------\n"
+    print("\n-----------------These directory can be present (not sure!!)--------------------\n")
     for i in end_point:
         if(not i.startswith(start) and not i.endswith(extension)):
-            print i
+            print(i)
             if(args.output): saving_in_file(i)
 
 
